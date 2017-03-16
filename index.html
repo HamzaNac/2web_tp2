@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ex2</title>
+
+    </head>
+<body>
+<div id="info"> <p>test</p></div>
+<script type="text/javascript">
+    var xhr = new XMLHttpRequest();
+    var flash = document.getElementById("info");
+
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState == 4) {
+            alert("Ca marche")
+            if(xhr.status == 200)
+                flash.innerHTML = (xhr.responseText);
+            else alert("Error!");
+        }
+    };
+    xhr.open("GET", "api/server.php");
+    xhr.send(null);
+
+</script>
+</body>
+
+
+</html>
